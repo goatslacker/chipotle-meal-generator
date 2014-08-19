@@ -64,7 +64,7 @@ function modified(l) {
 }
 
 function many(l, x) {
-  var n = Math.floor(Math.random() * (l.length - 1)) + x
+  var n = Math.floor(Math.random() * (l.length - x + 1)) + x
   return Array.apply(Array, Array(n)).map(function () {
     return one(l)
   })
@@ -77,7 +77,7 @@ function getRandomChipotle() {
     beans: both(beans),
     protein: modified(protein),
     veggies: Math.random() > 0.5,
-    toppings: many(toppings, 2),
+    toppings: many(toppings, 3),
     chips: Math.random() > 0.85
   }
 }
